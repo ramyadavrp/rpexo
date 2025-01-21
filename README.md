@@ -105,12 +105,9 @@ Many more....
  ## Author Contact
   Contact me with any questions!<br>
 
-  Email: Prajwal.iar@gmail.com
-  Whatsapp: +977-9818441226
+  Email: mr.ramprakash93@gmail.com
+  Whatsapp: +91-9838223444
 
-  ## License
-  This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.<br />
 <hr>
-  Copyright © 2023 [Prajwal R.](https://raiprajwal.com/)
   
 <p style="text-align:center">Thank You so much for your time !!!</p>
