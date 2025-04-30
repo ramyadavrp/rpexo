@@ -1,4 +1,9 @@
-
+<style>
+	.logo img {
+	    width: 100px;
+	    height: 140px;
+	}
+</style>
 	<!-- Start Footer Area -->
 	<footer class="footer">
 		<!-- Footer Top -->
@@ -9,7 +14,7 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="{{asset('backend/img/logo2.png')}}" alt="#"></a>
+								<a href="index.html"><img src="{{asset('backend/img/rpexo2.png')}}" alt="#"></a>
 							</div>
 							@php
 								$settings=DB::table('settings')->get();

@@ -173,11 +173,13 @@
         <div class="row">
             @if($featured)
                 @foreach($featured as $data)
+
                     <!-- Single Banner  -->
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-banner">
                             @php
                                 $photo=explode(',',$data->photo);
+                                
                             @endphp
                             <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
                             <div class="content">
