@@ -79,7 +79,10 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$categories->links()}}</span>
+        <span style="float:right">
+          {{ $categories->links('pagination::bootstrap-4') }}
+          <!-- {{$categories->links()}} -->
+        </span>
         @else
           <h6 class="text-center">No Categories found!!! Please create Category</h6>
         @endif

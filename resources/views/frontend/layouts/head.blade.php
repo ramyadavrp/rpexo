@@ -16,7 +16,7 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="{{asset('frontend/css/font-awesome.css')}}">
 <!-- Fancybox -->
-<link rel="stylesheet" href="{{asset('frontend/css/jquery.fancybox.min.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('frontend/css/jquery.fancybox.min.css')}}"> -->
 <!-- Themify Icons -->
 <link rel="stylesheet" href="{{asset('frontend/css/themify-icons.css')}}">
 <!-- Nice Select CSS -->
@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="{{asset('frontend/css/owl-carousel.css')}}">
 <!-- Slicknav -->
 <link rel="stylesheet" href="{{asset('frontend/css/slicknav.min.css')}}">
+
 <!-- Jquery Ui -->
 <link rel="stylesheet" href="{{asset('frontend/css/jquery-ui.css')}}">
 
