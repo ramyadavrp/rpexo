@@ -1,8 +1,18 @@
 @extends('frontend.layouts.master')
-
-@section('title','E-SHOP || PRODUCT PAGE')
+@section('meta')
+    <meta name="description" content="Discover RPEXO – your trusted destination for premium furniture. Explore our wide range of stylish, durable, and affordable furniture for every room. Shop now to upgrade your space!">
+    <meta name="keywords" content="RPEXO, furniture, home furniture, premium furniture, modern furniture, bedroom furniture, living room furniture, wooden furniture, stylish furniture, buy furniture online">
+    <link rel="icon" href="/favicon.png" type="image/png">
+@endsection
+@section('title','RPEXO | Premium Quality Furniture for Stylish Living')
 
 @section('main-content')
+<style>
+    img.default-img {
+        min-height: 250px;
+        max-height: 250px;
+    }
+</style>
 	<!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="container">
@@ -385,7 +395,6 @@
 </style>
 @endpush
 @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     {{-- <script>
         $('.cart').click(function(){
             var quantity=1;

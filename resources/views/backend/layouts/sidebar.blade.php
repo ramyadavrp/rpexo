@@ -120,6 +120,20 @@
             <span>Orders</span>
         </a>
     </li>
+    <!--Subscription -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('subscription.index')}}">
+           <i class="fas fa-bell"></i>
+            <span>Subscription</span>
+        </a>
+    </li>
+    <!--Subscription -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('message.index')}}">
+           <i class="fa fa-envelope"></i>
+            <span>Message</span>
+        </a>
+    </li>
 
     <!-- Reviews -->
     <li class="nav-item">

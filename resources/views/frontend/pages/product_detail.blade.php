@@ -1,41 +1,46 @@
 @extends('frontend.layouts.master') @section('meta')
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name='copyright' content=''>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="keywords" content="online shop, purchase, cart, ecommerce site, best online shopping">
-<meta name="description" content="{{$product_detail->summary}}">
-<meta property="og:url" content="{{route('product-detail',$product_detail->slug)}}">
-<meta property="og:type" content="article">
-<meta property="og:title" content="{{$product_detail->title}}">
-<meta property="og:image" content="{{$product_detail->photo}}">
-<meta property="og:description" content="{{$product_detail->description}}">
+@section('meta')
+    <meta name="description" content="{{$product_detail->description}}">
+    <meta name="keywords" content="{{$product_detail->summary}}">
+    <link rel="icon" href="/favicon.png" type="image/png">
+@endsection
+@section('title','RPEXO | Premium Quality Furniture for Stylish Living')
+    <!-- <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='copyright' content=''>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="online shop, purchase, cart, ecommerce site, best online shopping">
+    <meta name="description" content="{{$product_detail->summary}}">
+    <meta property="og:url" content="{{route('product-detail',$product_detail->slug)}}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{$product_detail->title}}"> -->
+
 <!-- Fancybox css-->
 <link rel="stylesheet" href="https://staging.accrecent.com/css/fancybox.css">
 <style>
     .zoomD {
-    	        width: 400px;
-    	        height: auto;
-    	        cursor: pointer;
-    	        /* width: 250px; */
-    	        height: auto;
-    	    }
+                width: 400px;
+                height: auto;
+                cursor: pointer;
+                /* width: 250px; */
+                height: auto;
+            }
     
-    	    .template_images {
-    	        padding-top: 15px;
-    	        margin-left: -15px;
-    	    }
+            .template_images {
+                padding-top: 15px;
+                margin-left: -15px;
+            }
     
-    	    .template_images {
-    	        padding-top: 0px !important;
-    	        margin-left: -15px;
-    	    }
-    	    .zoomD {
-    	        width: 100%;
-    	    }
+            .template_images {
+                padding-top: 0px !important;
+                margin-left: -15px;
+            }
+            .zoomD {
+                width: 100%;
+            }
 </style>
-@endsection @section('title','E-SHOP || PRODUCT DETAIL') @section('main-content')
+@section('main-content')
 
 <!-- Breadcrumbs -->
 <div class="breadcrumbs">
@@ -323,10 +328,10 @@
                     <div class="single-product">
                         <div class="product-img">
                             <a href="{{route('product-detail',$data->slug)}}">
-											@php 
-												$photo=explode(',',$data->photo);
-											@endphp
-                                            <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                            @php 
+                                                $photo=explode(',',$data->photo);
+                                            @endphp
+                                            <img style="min-height: 250px;max-height: 250px;" class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                             <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                             <span class="price-dec">{{$data->discount}} % Off</span>
                                                                     {{-- <span class="out-of-stock">Hot</span> --}}
@@ -377,16 +382,16 @@
                         <div class="product-gallery">
                             <div class="quickview-slider-active">
                                 <div class="single-slider">
-                                    <img src="images/modal1.png" alt="#">
+                                    <!-- <img src="images/modal1.png" alt="#"> -->
                                 </div>
                                 <div class="single-slider">
-                                    <img src="images/modal2.png" alt="#">
+                                    <!-- <img src="images/modal2.png" alt="#"> -->
                                 </div>
                                 <div class="single-slider">
-                                    <img src="images/modal3.png" alt="#">
+                                    <!-- <img src="images/modal3.png" alt="#"> -->
                                 </div>
                                 <div class="single-slider">
-                                    <img src="images/modal4.png" alt="#">
+                                    <!-- <img src="images/modal4.png" alt="#"> -->
                                 </div>
                             </div>
                         </div>
@@ -479,52 +484,55 @@
 @endsection @push('styles')
 <style>
     /* Rating */
-    		.rating_box {
-    		display: inline-flex;
-    		}
+            .rating_box {
+            display: inline-flex;
+            }
     
-    		.star-rating {
-    		font-size: 0;
-    		padding-left: 10px;
-    		padding-right: 10px;
-    		}
+            .star-rating {
+            font-size: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            }
     
-    		.star-rating__wrap {
-    		display: inline-block;
-    		font-size: 1rem;
-    		}
+            .star-rating__wrap {
+            display: inline-block;
+            font-size: 1rem;
+            }
     
-    		.star-rating__wrap:after {
-    		content: "";
-    		display: table;
-    		clear: both;
-    		}
+            .star-rating__wrap:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
     
-    		.star-rating__ico {
-    		float: right;
-    		padding-left: 2px;
-    		cursor: pointer;
-    		color: #F7941D;
-    		font-size: 16px;
-    		margin-top: 5px;
-    		}
+            .star-rating__ico {
+            float: right;
+            padding-left: 2px;
+            cursor: pointer;
+            color: #F7941D;
+            font-size: 16px;
+            margin-top: 5px;
+            }
     
-    		.star-rating__ico:last-child {
-    		padding-left: 0;
-    		}
+            .star-rating__ico:last-child {
+            padding-left: 0;
+            }
     
-    		.star-rating__input {
-    		display: none;
-    		}
+            .star-rating__input {
+            display: none;
+            }
     
-    		.star-rating__ico:hover:before,
-    		.star-rating__ico:hover ~ .star-rating__ico:before,
-    		.star-rating__input:checked ~ .star-rating__ico:before {
-    		content: "\F005";
-    		}
+            .star-rating__ico:hover:before,
+            .star-rating__ico:hover ~ .star-rating__ico:before,
+            .star-rating__input:checked ~ .star-rating__ico:before {
+            content: "\F005";
+            }
 </style>
 @endpush @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<!-- Fancybox js-->
+<script src="https://staging.accrecent.com/js/jquery-3.6.4.min.js"></script>
+<script src="https://staging.accrecent.com/js/fancybox.umd.js"></script>
 
 {{--
 <script>
@@ -542,28 +550,23 @@
                 },
                 success:function(response){
                     console.log(response);
-					if(typeof(response)!='object'){
-						response=$.parseJSON(response);
-					}
-					if(response.status){
-						swal('success',response.msg,'success').then(function(){
-							document.location.href=document.location.href;
-						});
-					}
-					else{
+                    if(typeof(response)!='object'){
+                        response=$.parseJSON(response);
+                    }
+                    if(response.status){
+                        swal('success',response.msg,'success').then(function(){
+                            document.location.href=document.location.href;
+                        });
+                    }
+                    else{
                         swal('error',response.msg,'error').then(function(){
-							document.location.href=document.location.href;
-						});
+                            document.location.href=document.location.href;
+                        });
                     }
                 }
             })
         });
 </script> --}}
-
-<!-- Fancybox js-->
-<script src="https://staging.accrecent.com/js/jquery-3.6.4.min.js"></script>
-<script src="https://staging.accrecent.com/js/fancybox.umd.js"></script>
-
 
 <script>
     $(document).ready(function () {
@@ -588,6 +591,7 @@
             // e.preventDefault();
         });
     });
+
 </script>
 
 

@@ -41,7 +41,8 @@
       </tbody>
     </table>
     <nav class="blog-pagination justify-content-center d-flex">
-      {{$messages->links()}}
+      {{ $messages->links('pagination::bootstrap-4') }}
+      <!-- {{$messages->links()}} -->
     </nav>
     @else
       <h2>Messages Empty!</h2>
@@ -50,8 +51,7 @@
 </div>
 @endsection
 @push('styles')
-  <link href="{{asset('backend/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+ 
   <style>
       div.dataTables_wrapper div.dataTables_paginate{
           display: none;
@@ -66,9 +66,7 @@
   </style>
 @endpush
 @push('scripts')
-  <script src="{{asset('backend/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-  <script src="{{asset('backend/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
 
   <!-- Page level custom scripts -->
   <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>

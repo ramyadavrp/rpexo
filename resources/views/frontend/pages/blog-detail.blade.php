@@ -1,7 +1,11 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-TECH || Blog Detail page')
-
+@section('meta')
+    <meta name="description" content="Discover RPEXO – your trusted destination for premium furniture. Explore our wide range of stylish, durable, and affordable furniture for every room. Shop now to upgrade your space!">
+    <meta name="keywords" content="RPEXO, furniture, home furniture, premium furniture, modern furniture, bedroom furniture, living room furniture, wooden furniture, stylish furniture, buy furniture online">
+    <link rel="icon" href="/favicon.png" type="image/png">
+@endsection
+@section('title','RPEXO | Premium Quality Furniture for Stylish Living')
 @section('main-content')
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
@@ -202,7 +206,7 @@
     <!--/ End Blog Single -->
 @endsection
 @push('styles')
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+
 @endpush
 @push('scripts')
 <script>

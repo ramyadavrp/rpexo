@@ -9,6 +9,7 @@ use App\Models\PostCategory;
 use App\Models\Post;
 use App\Models\Cart;
 use App\Models\Brand;
+use App\Models\Subscription;
 use App\User;
 use Auth;
 use Session;
@@ -276,7 +277,9 @@ class FrontendController extends Controller
             $post=$post->where('status','active')->orderBy('id','DESC')->paginate(9);
         }
         // $post=Post::where('status','active')->paginate(8);
+        
         $rcnt_post=Post::where('status','active')->orderBy('id','DESC')->limit(3)->get();
+        //dd($rcnt_post);
         return view('frontend.pages.blog')->with('posts',$post)->with('recent_posts',$rcnt_post);
     }
 
@@ -302,7 +305,7 @@ class FrontendController extends Controller
 
     public function blogFilter(Request $request){
         $data=$request->all();
-        // return $data;
+         //return $data;
         $catURL="";
         if(!empty($data['category'])){
             foreach($data['category'] as $category){
@@ -340,8 +343,9 @@ class FrontendController extends Controller
     public function blogByTag(Request $request){
         // dd($request->slug);
         $post=Post::getBlogByTag($request->slug);
-        // return $post;
+        // dd($post);
         $rcnt_post=Post::where('status','active')->orderBy('id','DESC')->limit(3)->get();
+        // dd($rcnt_post);
         return view('frontend.pages.blog')->with('posts',$post)->with('recent_posts',$rcnt_post);
     }
 
@@ -406,21 +410,34 @@ class FrontendController extends Controller
     }
 
     public function subscribe(Request $request){
-        if(! Newsletter::isSubscribed($request->email)){
-                Newsletter::subscribePending($request->email);
-                if(Newsletter::lastActionSucceeded()){
-                    request()->session()->flash('success','Subscribed! Please check your email');
-                    return redirect()->route('home');
-                }
-                else{
-                    Newsletter::getLastError();
-                    return back()->with('error','Something went wrong! please try again');
-                }
-            }
-            else{
-                request()->session()->flash('error','Already Subscribed');
-                return back();
-            }
+        //return $request->all();
+        $data=$request->all();
+        $subs=Subscription::create($data);
+
+        if($subs){
+            request()->session()->flash('success','Subscription Successfully added');
+            return redirect()->route('home');
+        }
+        else{
+            request()->session()->flash('error','Please try again!!');
+            return back();
+        }
+
+        // if(! Newsletter::isSubscribed($request->email)){
+        //         Newsletter::subscribePending($request->email);
+        //         if(Newsletter::lastActionSucceeded()){
+        //             request()->session()->flash('success','Subscribed! Please check your email');
+        //             return redirect()->route('home');
+        //         }
+        //         else{
+        //             Newsletter::getLastError();
+        //             return back()->with('error','Something went wrong! please try again');
+        //         }
+        //     }
+        //     else{
+        //         request()->session()->flash('error','Already Subscribed');
+        //         return back();
+        //     }
     }
     
 }

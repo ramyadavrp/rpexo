@@ -52,6 +52,20 @@
   <!-- Page level plugins -->
   <script src="{{asset('backend/vendor/chart.js/Chart.min.js')}}"></script>
 
+  <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+  <script src="{{asset('backend/summernote/summernote.min.js')}}"></script>
+  <!-- Page level plugins -->
+  <script src="{{asset('backend/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('backend/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+  <!-- Toastr message CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> 
+  
+  <!-- Page level custom scripts -->
+  <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
+  <!-- <script> -->
   <!-- Page level custom scripts -->
   {{-- <script src="{{asset('backend/js/demo/chart-area-demo.js')}}"></script> --}}
   {{-- <script src="{{asset('backend/js/demo/chart-pie-demo.js')}}"></script> --}}
