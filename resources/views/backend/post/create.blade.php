@@ -104,14 +104,11 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="{{asset('backend/summernote/summernote.min.css')}}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+
 @endpush
 @push('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-<script src="{{asset('backend/summernote/summernote.min.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 <script>
     $('#lfm').filemanager('image');
 

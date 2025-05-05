@@ -44,7 +44,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
+         //return $request->all();
+       
         $this->validate($request,[
             'title'=>'string|required',
             'summary'=>'string|required',
@@ -53,16 +54,17 @@ class ProductController extends Controller
             'size'=>'nullable',
             'stock'=>"required|numeric",
             'cat_id'=>'required|exists:categories,id',
-            'brand_id'=>'nullable|exists:brands,id',
             'child_cat_id'=>'nullable|exists:categories,id',
             'is_featured'=>'sometimes|in:1',
+            'brand_id'=>'nullable|exists:brands,id',
             'status'=>'required|in:active,inactive',
             'condition'=>'required|in:default,new,hot',
             'price'=>'required|numeric',
             'discount'=>'nullable|numeric'
         ]);
 
-        $data=$request->all();
+        $data = $request->all();
+        
         $slug=Str::slug($request->title);
         $count=Product::where('slug',$slug)->count();
         if($count>0){
@@ -79,6 +81,7 @@ class ProductController extends Controller
         }
         // return $size;
         // return $data;
+        //dd($data);
         $status=Product::create($data);
         if($status){
             request()->session()->flash('success','Product Successfully added');

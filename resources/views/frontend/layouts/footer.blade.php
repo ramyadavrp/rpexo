@@ -103,7 +103,7 @@
 	<!-- Bootstrap JS -->
 	<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
 	<!-- Color JS -->
-	<script src="{{asset('frontend/js/colors.js')}}"></script>
+	<!-- <script src="{{asset('frontend/js/colors.js')}}"></script> -->
 	<!-- Slicknav JS -->
 	<script src="{{asset('frontend/js/slicknav.min.js')}}"></script>
 	<!-- Owl Carousel JS -->
@@ -129,8 +129,11 @@
 
 	<!-- Active JS -->
 	<script src="{{asset('frontend/js/active.js')}}"></script>
-
+	<!-- <script src="{{asset('sw.js')}}"></script> -->
+	<!-- Sweet Alert JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	
+	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
 	@stack('scripts')
 	<script>
 		setTimeout(function(){

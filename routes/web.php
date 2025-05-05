@@ -15,6 +15,7 @@
     use App\Http\Controllers\PayPalController;
     use App\Http\Controllers\NotificationController;
     use App\Http\Controllers\HomeController;
+    use App\Http\Controllers\SubscriptionController;
     use \UniSharp\LaravelFilemanager\Lfm;
 
     /*
@@ -131,6 +132,11 @@
         Route::resource('banner', 'BannerController');
         // Brand
         Route::resource('brand', 'BrandController');
+        // subscription
+        Route::resource('subscription', 'SubscriptionController');
+        Route::post('/changestatus/change-status', [SubscriptionController::class, 'changeStatus']);
+
+        //Route::match(['get', 'post'], '/changestatus/change-status', [SubscriptionController::class, 'changeStatus']);
         // Profile
         Route::get('/profile', [AdminController::class, 'profile'])->name('admin-profile');
         Route::post('/profile/{id}', [AdminController::class, 'profileUpdate'])->name('profile-update');

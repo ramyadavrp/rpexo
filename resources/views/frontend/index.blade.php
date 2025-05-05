@@ -1,6 +1,31 @@
 @extends('frontend.layouts.master')
-@section('title','E-SHOP || HOME PAGE')
+
+@section('meta')
+    <meta name="description" content="Discover RPEXO – your trusted destination for premium furniture. Explore our wide range of stylish, durable, and affordable furniture for every room. Shop now to upgrade your space!">
+    <meta name="keywords" content="RPEXO, furniture, home furniture, premium furniture, modern furniture, bedroom furniture, living room furniture, wooden furniture, stylish furniture, buy furniture online">
+    <link rel="icon" href="/favicon.png" type="image/png">
+@endsection
+@section('title', 'RPEXO | Premium Quality Furniture for Stylish Living')
 @section('main-content')
+<style>
+    .setheight-banner {
+        min-height: 300px;
+        max-height: 300px;  
+    }
+    img.default-img {
+        min-height: 250px;
+        max-height: 250px;
+    }
+    .image-fixed-height{
+        min-height: 200px;
+        max-height: 200px;
+    }
+    .shop-single-blog {
+        min-height: 300px;
+        max-height: 300px;
+    }
+
+</style>
 <!-- Slider Area -->
 @if(count($banners)>0)
     <section id="Gslider" class="carousel slide" data-ride="carousel">
@@ -47,7 +72,7 @@
                     @if($cat->is_parent==1)
                         <!-- Single Banner  -->
                         <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-banner">
+                            <div class="single-banner setheight-banner">
                                 @if($cat->photo)
                                     <img src="{{$cat->photo}}" alt="{{$cat->photo}}">
                                 @else
@@ -282,7 +307,7 @@
                                             $photo=explode(',',$product->photo);
                                             // dd($photo);
                                         @endphp
-                                        <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                        <img class="image-fixed-height" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                         <a href="{{route('add-to-cart',$product->slug)}}" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                     </div>
                                 </div>
@@ -521,8 +546,7 @@
 @endsection
 
 @push('styles')
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+
     <style>
         /* Banner Sliding */
         #Gslider .carousel-inner {

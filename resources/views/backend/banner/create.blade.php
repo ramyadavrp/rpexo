@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 
-@section('title','E-SHOP || Banner Create')
+@section('title','RPEXO || Banner Create')
 
 @section('main-content')
 
@@ -62,11 +62,9 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="{{asset('backend/summernote/summernote.min.css')}}">
 @endpush
 @push('scripts')
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-<script src="{{asset('backend/summernote/summernote.min.js')}}"></script>
 <script>
     $('#lfm').filemanager('image');
 

@@ -1,6 +1,7 @@
 @extends('backend.layouts.master')
-@section('title','E-SHOP || DASHBOARD')
+@section('title','RPEXO || DASHBOARD')
 @section('main-content')
+
 <div class="container-fluid">
     @include('backend.layouts.notification')
     <!-- Page Heading -->
@@ -121,13 +122,16 @@
     
   </div>
 @endsection
-
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 @push('scripts')
+ <script src="{{asset('backend/js/sb-admin-2.min.js')}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 {{-- pie chart --}}
 <script type="text/javascript">
   var analytics = <?php echo $users; ?>
+
 
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
@@ -145,6 +149,7 @@
   {{-- line chart --}}
   <script type="text/javascript">
     const url = "{{route('product.order.income')}}";
+    //alert(url);
     // Set new default font family and font color to mimic Bootstrap's default styling
     Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
     Chart.defaults.global.defaultFontColor = '#858796';
@@ -275,4 +280,5 @@
               });
 
   </script>
+
 @endpush
